@@ -1,6 +1,6 @@
 <!-- This is the HTML form that is being processed by this php file. It is meant to be a guide but if you copy and paste it into your HTML it will work.
 
-<form name="Form" action="contact_process.php" method="post">
+<form name="Form" action="contact.php" method="post">
 	<label for="email" id="email">Email</label>
 	<input type="text" name="email" required>
 	<select name="subject">
