@@ -8,90 +8,206 @@ for the dist build */
 @import "grid";
 @import "variables";
 @import "mixins";
-
 //mobile styles
-
 html {
     font-size: 18px;
 }
 
 body {
-    h1, h2, h3, h4 {
+    max-width: 100%;
+    h1,
+    h2,
+    h3,
+    h4 {
         text-align: center;
+    }
+    a {}
+    p {
+        width: 84%;
+        margin-left: 8%;
+    }
+    button {
+        width: 60%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin: 1rem 20%;
+        background: transparent;
+        border: 4px solid $color3;
+        color: $color3;
+        font-size: 1.5rem;
+        font-weight: bold;
     }
     li {
         list-style-type: none;
     }
-    width: 100%;
-    header{
-        width: 100%;
-        background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)),                             url('../img/people.jpg') no-repeat center 0 fixed;
+    header {
+        background: linear-gradient(to bottom, $color4, $color4), url('../img/people.jpg') no-repeat center 0 fixed;
         background-size: cover;
         h1 {
             font-size: 7rem;
+            margin-bottom: 8rem;
             color: white;
         }
         nav {
             display: none;
         }
     }
+    main {
+        #intro {
+            h3 {
+                @include boxHeader;
+            }
+            ul {
+                @include boxList;
+            }
+        }
+        #process {
+            h4 {
+                color: $color5;
+                font-size: 5rem;
+                font-weight: bold;
+                padding: 0;
+                margin-top: -5rem;
+            }
+            p {
+                margin-top: -22rem;
+            }
+            li {
+                display: inline;
+                position: relative;
+                font-size: 1.5rem;
+                margin-left: 1.75rem;
+                &:nth-of-type(1) {
+                    margin-left: 0;
+                }
+                span {
+                    display: inline-block;
+                    position: relative;
+                    width: 2rem;
+                    height: 2rem;
+                    margin-right: -1.4rem;
+                    background: $color2;
+                    transform: rotate(45deg);
+                }
+            }
+            ul {
+                margin-left: 7.5%;
+            }
+            ul:nth-of-type(1) {
+               
+                li {
+                    padding: 0 .2rem;
+                }
+                li:nth-of-type(3) {
+                    padding-right: 0rem;
+                }
+            }
+            ul:nth-of-type(2) {
+                margin-top: -3.25rem;
+                color: $color3;
+            }
+            li:nth-of-type(1),
+            li:nth-of-type(6) {
+                color: $color2;
+            }
 
-    main {}
-
+        }
+        .portfolio {
+            img:nth-of-type(1) {
+                width: 70%;
+            }
+            img:nth-of-type(2) {
+                float: right;
+                width: 50%;
+                margin-top: -325px;
+            }
+            h3 {
+                font-size: 1.5rem;
+            }
+            h5 {
+                font-size: 1.25rem;
+                line-height: .5;
+                margin-left: 8%;
+            }
+            .col6:nth-of-type(2) {
+                img {
+                    width: 100%;
+                }
+            }
+            button {
+                background: linear-gradient(to bottom, $color3, $color5);
+                border-color: $color4;
+                color: $color4;
+            }
+        }
+        #contact {
+            .col6 {
+                h3 {
+                    @include boxHeader;
+                }
+                p {
+                    @include boxList;
+                }
+            }
+            form {
+                margin: 1rem 5%;
+                padding: 1rem 5%;
+                border: 1px solid $color5;
+            label {
+                width: 100%;
+                margin-top: 1rem;
+            }
+            input {
+                @include formStyling;
+            }
+            select {
+                @include formStyling;
+            }
+            textarea {
+                @include formStyling;
+            }
+            }
+        }
+        
+    }
     footer {}
 }
 
 //tablet styles
 @media only screen and (min-width: 768px) {
-
-html {}
-
-body {
-
-    header{
-
-        nav {}
+    html {}
+    body {
+        header {
+            nav {}
+        }
+        main {}
+        footer {}
     }
-
-    main {}
-    
-    footer {}
-}    
-}   
+}
 
 //notebook styles
 @media only screen and (min-width: 960px) {
-
-html {}
-
-body {
-
-    header{
-        h1 {
-            font-size: 15rem;
+    html {}
+    body {
+        header {
+            h1 {
+                font-size: 15rem;
+            }
+            nav {}
         }
-        nav {}
+        main {}
+        footer {}
     }
-
-    main {}
-    
-    footer {}
 }
-}    
+
 //large screen styles
 @media only screen and (min-width: 1140px) {
-
-html {}
-
-body {
-
-    header{
-
-        nav {}
+    html {}
+    body {
+        header {
+            nav {}
+        }
+        main {}
+        footer {}
     }
-
-    main {}
-    
-    footer {}
-}
 }

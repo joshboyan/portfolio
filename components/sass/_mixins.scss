@@ -1,0 +1,21 @@
+@mixin boxHeader {
+	position: relative;
+    width: 60%;
+    margin-left: 10%;
+    background: $color3;
+    text-decoration: underline;
+}
+
+@mixin boxList {
+	background: linear-gradient(to bottom, $color3, $color5);
+    width: 80%;
+    padding: 1.5rem 1rem;
+    margin: -1.75rem 5% 0 5%;
+    border: 2px solid $color4;
+}
+
+@mixin formStyling {
+    width: 90%;
+    margin: 0 5% 1rem 5%;
+    border: 1px solid $color1;
+}
