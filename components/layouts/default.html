@@ -24,9 +24,9 @@
   <![endif]-->
 </head>
 <body>
-	<header>
+	<header role="banner">
 		<a href="#main" class="sr-only">Skip to content</a>
-		<nav>
+		<nav role="navigation">
 			<div class="navbar">
 				<img src="%img/logo.png" alt="Josh Boyan web design Logo">
 				<ul>
@@ -65,23 +65,23 @@
 	<!--body tag injects unique pages from pages directory-->
 {{> body}}
 
-	<footer>
+	<footer role="contentinfo">
 		<div class="col6">
 			<nav>
 				<ul>
-					<li>Portfolio</li>
-					<li>minframe</li>
-					<li>mf tutorial</li>
-					<li>Resume</li>
-					<li>Contact</li>
+					<li><a href="index.html">Portfolio</a></li>
+					<li><a href="minframe/index.html">minframe</a></li>
+					<li><a href="minframe/tutorial.html">mf tutorial</a></li>
+					<li><a href="resume/index.html">Resume</a></li>
+					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
 			<div class="col6">
 				<ul>
-					<li><i class="fa fa-github"></i><span>github</span></li>
-					<li><img src="%img/npm.png" alt="npm"></li>
-					<li><i class="fa fa-codepen"></i><span>codepen</span></li>
-					<li><i class="fa fa-linkedin"></i><span>LinkedIn</span></li>
+					<li><a href="https://github.com/joshboyan"><i class="fa fa-github"></i><span>github</span></a></li>
+					<li><a href="#"><img src="%img/npm.png" alt="npm"></a></li>
+					<li><a href="#"><i class="fa fa-codepen"></i><span>codepen</span></a></li>
+					<li><a href="#"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a></li>
 				</ul>
 			</div>
 			<div class="col12">
