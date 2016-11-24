@@ -15,7 +15,6 @@ html {
 
 body {
     max-width: 100%;
-
     section {
         margin-top: 2.25rem;
     }
@@ -54,7 +53,10 @@ body {
             color: white;
         }
         nav {
-            display: none;
+            
+            .mobileNav {
+                display: none;
+            }
         }
     }
     main {
@@ -99,7 +101,6 @@ body {
                 margin-left: 0%;
             }
             ul:nth-of-type(1) {
-               
                 li {
                     padding: 0 .2rem;
                 }
@@ -115,7 +116,6 @@ body {
             li:nth-of-type(6) {
                 color: $color2;
             }
-
         }
         .portfolio {
             img:nth-of-type(1) {
@@ -159,35 +159,30 @@ body {
                 padding: 1rem 5%;
                 border: 1px solid $color4;
                 background: linear-gradient(to bottom, $color3, $color5);
-    
-            label {
-                width: 100%;
-                margin-top: 1rem;
-            }
-            input {
-                @include formStyling;
-            }
-            select {
-                @include formStyling;
-            }
-            textarea {
-                @include formStyling;
-            }
+                label {
+                    width: 100%;
+                    margin-top: 1rem;
+                }
+                input {
+                    @include formStyling;
+                }
+                select {
+                    @include formStyling;
+                }
+                textarea {
+                    @include formStyling;
+                }
             }
         }
-        
     }
     footer {
         background: $color4;
         text-align: center;
         a {
-
             font-weight: bold;
             color: $color2;
         }
-        .col12 {
-
-        }
+        .col12 {}
     }
 }
 
@@ -195,8 +190,81 @@ body {
 @media only screen and (min-width: 768px) {
     html {}
     body {
+        
         header {
-            nav {}
+            nav {
+                .navbar {
+                position: fixed;                
+                width: 100%;
+                height: 75px;                
+                opacity: 0;
+
+                a {
+                    color: $color2;
+                }
+                div {
+                    position: relative;
+                    z-index: 500;
+                    height: 75px;
+                    background: $color3;
+                img {
+                    position: relative;
+                    z-index: 1000;
+                    width: 100px;
+                }
+                ul {
+                    
+                    width: 75%;
+                    float: right;
+                    background: $color3;
+                    li {
+                        display: inline;
+                        padding-right: 10%;
+                        font-size: 2rem;
+                    }
+                }
+
+
+                }
+                .slideUp {
+                    position: relative;
+                    z-index: 0;
+                    height: 50px;
+                    background: $color1;
+                    top: -80px;
+                    padding-top: 1rem;
+                    padding-left: 20%;
+                    li {
+                        display: inline;
+                        padding-right: 5%;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            @keyframes visible {
+                from {opacity: 0;}
+                to {opacity: 1;}
+            }
+            .visible {
+                animation: visible 1s ease-in-out;
+                animation-fill-mode: forwards;
+            }
+
+            .mobileNav {
+                display: none;
+            }
+            }
+            h1 {
+                font-size: 9rem;
+            }
+            @keyframes slideDown {
+                from {top: -80px}
+                to {top: -20px}
+            }
+            .slideDown {
+                animation: slideDown .5s ease-in-out;
+                animation-fill-mode: forwards;
+            }
         }
         main {}
         footer {}
@@ -209,7 +277,7 @@ body {
     body {
         header {
             h1 {
-                font-size: 15rem;
+                font-size: 10rem;
             }
             nav {}
         }
