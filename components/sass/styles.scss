@@ -37,6 +37,9 @@ for the dist build */
         section {
             margin-top: 2.25rem;
         }
+        a {
+            cursor: pointer;
+        }
         h1,
         h2,
         h3,
@@ -44,8 +47,8 @@ for the dist build */
             text-align: center;
         }
         p {
-            width: 84%;
-            margin-left: 8%;
+            
+            margin-left: 5%;
         }
         button {
             position: relative;
@@ -61,6 +64,7 @@ for the dist build */
             color: $color3;
             font-size: 1.5rem;
             font-weight: bold;
+            cursor: pointer;
             transition: .3s;
             &:hover {
                 color: $color2;
@@ -99,8 +103,10 @@ for the dist build */
                 text-shadow: 5px 5px $color6;
             }
             nav {
+                top: 0;
                 .navbar {
                     position: fixed;
+                    top: 0;
                     background: $color3;
                     height: 60px;
                     border-bottom: 3px solid $color1;
@@ -120,6 +126,7 @@ for the dist build */
                 }
                 div {
                     position: fixed;
+                    top: 0;
                     z-index: 1000;
                     width: 100%;
 
@@ -142,10 +149,10 @@ for the dist build */
                 }
                 @keyframes slideDown {
                     from {
-                        top: -80px
+                        top: -80px;
                     }
                     to {
-                        top: -25px
+                        top: -25px;
                     }
                 }
                 .slideDown {
@@ -155,6 +162,7 @@ for the dist build */
                 .mobileNav {
                     display: block;
                     position: fixed;
+                    top: 0;
                     z-index: 500;
                     height: 600px;
                     height: 110vh;
@@ -185,15 +193,42 @@ for the dist build */
         main {
             @include links;
             #intro {
+                overflow: hidden;
                 h3 {
                     @include boxHeader;
                 }
                 ul {
                     @include boxList;
                 }
+                .col6:nth-of-type(3) {
+                    
+                    img {  
+                        
+                        float: right;
+                        overflow: hidden;
+                        margin-top: -250px;
+                        width: 200px;                    
+                        width: 60%;
+                        margin-right: -15%;                       
+                    }
+                    p:nth-of-type(4) {
+                        position: relative;
+                        z-index: 100;
+                        width: 70%;
+                        ul {
+                            background: $color1;
+                        }
+                    }
+                }
+                .col6:nth-of-type(4) {
+                    display: none;
+                }
             }
             #process {
+                height: 600px;
+                height: 100vh;
                 h4 {
+                    opacity: 0;
                     color: $color5;
                     font-size: 5rem;
                     font-weight: bold;
@@ -203,45 +238,125 @@ for the dist build */
                 p {
                     margin-top: -22rem;
                 }
-                li {
-                    display: inline;
+                .process1 {
                     position: relative;
-                    font-size: 1.5rem;
-                    margin-left: 1.75rem;
-                    &:nth-of-type(1) {
-                        margin-left: 0;
-                    }
-                    span {
-                        display: inline-block;
-                        position: relative;
-                        width: 2rem;
-                        height: 2rem;
-                        margin-right: -1.4rem;
-                        background: $color2;
-                        transform: rotate(45deg);
+                    opacity: 0;
+                    top: 500px;
+                    p {
+                        padding-top:0;
                     }
                 }
-                ul {
-                    margin-left: 0%;
-                }
-                ul:nth-of-type(1) {
-                    li {
-                        padding: 0 .2rem;
+
+                .process2 {
+                    position: relative;
+                    opacity: 0;
+                    top: 175px;
+
+                    p {
+                        padding-top: 100px;
                     }
-                    li:nth-of-type(3) {
-                        padding-right: 0rem;
+                    
+                }
+                .process3 {
+                    position: relative;
+                    opacity: 0;
+                    top: -25px;
+                    
+                }
+                .process4 {
+                    position: relative;
+                    opacity: 0;
+                    top: -250px;
+                    p {
+                        padding-top: 200px;
                     }
                 }
-                ul:nth-of-type(2) {
-                    margin-top: -3.25rem;
+               
+                @keyframes processAnimation {
+                        from {
+                            transform: translateY(0px);
+                            opacity: 0;
+                        }
+                        to {
+                            transform: translateY(-450px);
+                            opacity: 1;
+                        }
+                    }
+                .processAnimation {
+                    animation: processAnimation 1s ease-out;
+                    animation-fill-mode: forwards;
+                }
+                @keyframes backgroundAnimation {
+                        from {
+                            opacity: 0;
+                        }
+                        to {
+                            opacity: 1;
+                        }
+                    }
+                .backgroundAnimation {
+                    animation: backgroundAnimation 1s ease-in 1s;
+                    animation-fill-mode: forwards;
+                }
+                #processControl {
+                    width: 100%;
+                    padding-left: 2.5%;
                     color: $color3;
+                    margin-top: -650px;
+
+                    div {
+                        display: inline-block;
+                        width: 10%;
+                        height: 10vw;
+                        margin: 2.5%;
+                        background: $color2;
+                        text-align: center;
+                        line-height: 10vw;
+                        cursor: pointer;
+                        tab-index: "0";
+                        transform:  rotate(45deg);
+                        div {
+                            transform: rotate(315deg);
+                        }
+                    }
+
+                    @keyframes wiggle {
+                        0% {
+                            margin: 2.5% 2.5% 2.5% 2.5%;
+                        }
+                        25% {
+                            margin: 2.5% 5% 2.5% 0;
+                        }
+                        75% {
+                            margin: 2.5% 0 2.5% 5%;
+                        }
+                        100% {
+                            margin: 2.5% 2.5% 2.5% 2.5%;
+                        }
+                    }
+                    .wiggle {
+                        animation: wiggle 2s ease-in-out infinite;
+                    }
+                    .still {
+
+                    }
+                    @keyframes controlAnimation {
+                        from {
+                            transform: scale(1) rotate(45deg);
+                        }
+                        to {
+                            transform: scale(1.5) rotate(405deg);
+                        }
+                    }
+                    .controlAnimation {
+                    animation: controlAnimation 1s ease-in-out;
+                    animation-fill-mode: forwards;
+                    }
                 }
-                li:nth-of-type(1),
-                li:nth-of-type(6) {
-                    color: $color2;
-                }
+                
             }
             .portfolio {
+                background: $color3;
                 img:nth-of-type(1) {
                     width: 70%;
                 }
@@ -271,6 +386,7 @@ for the dist build */
             }
             #contact {
                 .col6 {
+
                     h3 {
                         @include boxHeader;
                     }
@@ -280,6 +396,7 @@ for the dist build */
                 }
                 form {
                     @include boxList;
+                    margin-top: 2.5rem;
                     label {
                         width: 100%;
                         margin-top: 1rem;
@@ -315,7 +432,11 @@ for the dist build */
             }
         }
     }
-    
+    @media only screen and (min-width: 350px) {
+        body main #process #processControl {
+            margin-top: -550px;
+        }
+    }
     //tablet styles
     @media only screen and (min-width: 768px) {
         html {}
@@ -388,8 +509,10 @@ for the dist build */
                         width: 100%;
                         height: 50px;
                         background: $color1;
-                        top: -85px;
+                        top: -84px;
                         padding-top: 1rem;
+                        border-bottom: 1px solid $color3;
+                        transition: .3s;
                         li {
                             display: inline;
                             padding-right: 5%;

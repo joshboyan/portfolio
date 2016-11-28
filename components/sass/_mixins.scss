@@ -58,7 +58,9 @@
     margin: -1.75rem 5% 0 5%;
     border: 2px solid $color4;
 }
-
+@mixin processStarting {
+    
+}
 @mixin formStyling {
     width: 90%;
     margin: 0 5% 1rem 5%;

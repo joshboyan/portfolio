@@ -8,13 +8,13 @@ description: "Freelance web designer focused on helping local businesses achieve
 ---
 <h1>Grow Your Brand</h1>
 <div class="col6">
-    <a href=""><button>Process</button></a>
+    <a href="#process"><button>Process</button></a>
 </div>
 <div class="col6">
-    <a href=""><button>Projects</button></a>
+    <a href="#portfolio1"><button>Projects</button></a>
 </div>
 <div class="col12">
-    <a href=""><button>Contact</button></a>
+    <a href="#form"><button>Contact</button></a>
 </div>
 </header>
 <main role="main">
@@ -42,54 +42,66 @@ description: "Freelance web designer focused on helping local businesses achieve
         </div>
         <div class="col6">
             <p>Hi! I'm Josh.</p>
-            <p>I am a web designer and developer that creates digital solutions to real problems for local businesses like yours. My professional network also includes copywriters, graphic designers and marketing professionals. Check out some of my work below and reach out to tell me about your business. Then we will make a customized plan to tell everyone about it.</p>
+            <p>I am a user experience designer and front-end developer that creates digital solutions to real problems for local businesses like yours.</p>
+             
+            <p>My professional network also includes:</p>
+            <ol>
+                <li>copywriters</li>
+                <li>graphic designers</li>
+                <li>marketing professionals</li>
+            </ol>
+             <p>Check out some of my work below and <a href="#contact">reach out</a> to tell me about your business. <strong>Then we will make a customized plan to tell everyone about your business.</strong></p>
+            <img src="%img/me.png" alt="Josh Boyan">
         </div>
         <div class="col6">
-            <img src="" alt="">
-            <img src="" alt="">
+            <img src="%img/me.png" alt="Josh Boyan">
         </div>
     </section><!--/#intro-->
     <section id="process">
         <div>
             <h2>Creative Process</h2>
         </div>
-        <div>
+        <div id="process1" class="process1 processAnimation">
             <h3>Brand Exploration</h3>
-            <h4>What Makes You Great</h4>
+            <h4 class="backgroundAnimation">What Makes You Great</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis repellendus sapiente earum ipsa eum, laborum, nulla repudiandae officiis excepturi saepe non porro praesentium? Ipsa, nemo dolorum molestiae aliquam id est. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quaerat, dicta tempora dolorum magni reprehenderit dolores, aliquid placeat excepturi ut.</p>
 
         </div>
-        <!--<div>
+        <div id="process2" class="process2">
             <h3>Competitive Analysis</h3>
             <h4>How To Beat Them</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, voluptates modi officiis doloribus quasi unde et saepe, explicabo provident qui quod rem iusto. Iure tempore, sequi optio, sed ipsa labore!</p>
         </div>
-        <div>
+        <div id="process3" class="process3">
             <h3>Custom Design</h3>
-            <h4>Solving Your Business Problems</h4>
+            <h4>Solving Your Unique Issues</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur perspiciatis sit reiciendis recusandae veniam repellat, laudantium id minima accusantium nam. Non obcaecati asperiores repellendus ad voluptatibus accusamus in. Optio, quasi.</p>
         </div>
-        <div>
+        <div id="process4" class="process4">
             <h3>User Testing</h3>
             <h4>Getting It Right</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi exercitationem debitis animi, neque velit eius mollitia error harum voluptatem maiores explicabo ut esse aspernatur quam, adipisci eveniet doloribus aliquam vel.</p>
-        </div>-->
-        <ul>
-            <li></li>
-            <li><span></span></li>
-            <li><span></span></li>
-            <li><span></span></li>
-            <li><span></span></li>
-            <li></li>
-        </ul>
-        <ul>
-            <li><i class="fa fa-angle-double-left"></i></li>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li><i class="fa fa-angle-double-right"></i></li>
-        </ul>
+        </div>
+        <div id="processControl">
+            <div id="control0" data-slide="prev" class="control wiggle" onclick="prevSlide()">
+                <div><i class="fa fa-angle-double-left"></i></div>
+            </div>
+            <div id="control1" data-slide="1" class="control controlAnimation" onclick="currentSlide(1)">
+                <div>1</div>
+            </div>
+            <div id="control2" data-slide="2" class="control item" onclick="currentSlide(2)">
+                <div>2</div>
+            </div>
+            <div id="control3" data-slide="3" class="control item" onclick="currentSlide(3)">
+               <div>3</div>
+            </div>
+            <div id="control4" data-slide="4" class="control item" onclick="currentSlide(4)">
+                <div>4</div>
+            </div>
+            <div id="control5" data-slide="next" class="control wiggle" onclick="nextSlide()">
+                <div><i class="fa fa-angle-double-right"></i></div>
+            </div>
+        </div>
     </section><!--/#process-->
     <section id="portfolio1" class="portfolio">
         <h3>anything's PASTAble</h3>
@@ -188,7 +200,7 @@ description: "Freelance web designer focused on helping local businesses achieve
             </div>
         </div>
         <div class="col6">
-            <form action="contact.php" method="post">
+            <form id="form" action="contact.php" method="post">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email</label>
