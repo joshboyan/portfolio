@@ -34,9 +34,6 @@ for the dist build */
     
     body {
         max-width: 100%;
-        section {
-            margin-top: 2.25rem;
-        }
         a {
             cursor: pointer;
         }
@@ -47,7 +44,6 @@ for the dist build */
             text-align: center;
         }
         p {
-            
             margin-left: 5%;
         }
         button {
@@ -97,7 +93,7 @@ for the dist build */
             background: linear-gradient(to bottom, $color4, $color4), url('../img/people.jpg') no-repeat center 0 fixed;
             background-size: cover;
             h1 {
-                font-size: 7rem;                                               
+                font-size: 7rem;
                 margin-bottom: 8rem;
                 color: $color3;
                 text-shadow: 5px 5px $color6;
@@ -121,7 +117,7 @@ for the dist build */
                         }
                     }
                     ul {
-                    display: none;
+                        display: none;
                     }
                 }
                 div {
@@ -129,11 +125,13 @@ for the dist build */
                     top: 0;
                     z-index: 1000;
                     width: 100%;
-
                     img {
+                        position: relative;
+                        z-index: 1000;
+                        border-radius: 50%;
+                        box-shadow: 2px 2px 5px $color2;
                         width: 20%;
                     }
-                    
                 }
                 @keyframes visible {
                     from {
@@ -147,18 +145,6 @@ for the dist build */
                     animation: visible 1s ease-in-out;
                     animation-fill-mode: forwards;
                 }
-                @keyframes slideDown {
-                    from {
-                        top: -80px;
-                    }
-                    to {
-                        top: -25px;
-                    }
-                }
-                .slideDown {
-                    animation: slideDown .5s ease-in-out;
-                    animation-fill-mode: forwards;
-                }
                 .mobileNav {
                     display: block;
                     position: fixed;
@@ -168,7 +154,7 @@ for the dist build */
                     height: 110vh;
                     width: 100%;
                     margin-top: 60px;
-                    margin-left: -100%;                    
+                    margin-left: -100%;
                     background: $color1;
                     font-size: 1.5rem;
                     transition: .3s;
@@ -191,6 +177,9 @@ for the dist build */
             }
         }
         main {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
             @include links;
             #intro {
                 overflow: hidden;
@@ -200,28 +189,29 @@ for the dist build */
                 ul {
                     @include boxList;
                 }
-                .col6:nth-of-type(3) {
-                    
-                    img {  
-                        
-                        float: right;
-                        overflow: hidden;
-                        margin-top: -250px;
-                        width: 200px;                    
-                        width: 60%;
-                        margin-right: -15%;                       
-                    }
-                    p:nth-of-type(4) {
-                        position: relative;
-                        z-index: 100;
-                        width: 70%;
-                        ul {
-                            background: $color1;
+                div {
+                    padding-top: 1rem;
+                    .col6:nth-of-type(1) {
+                        img {
+                            float: right;
+                            overflow: hidden;
+                            margin-top: -250px;
+                            width: 200px;
+                            width: 60%;
+                            margin-right: -15%;
+                        }
+                        p:nth-of-type(4) {
+                            position: relative;
+                            z-index: 100;
+                            width: 70%;
+                            ul {
+                                background: $color1;
+                            }
                         }
                     }
-                }
-                .col6:nth-of-type(4) {
-                    display: none;
+                    .col6:nth-of-type(2) {
+                        display: none;
+                    }
                 }
             }
             #process {
@@ -236,64 +226,60 @@ for the dist build */
                     margin-top: -5rem;
                 }
                 p {
-                    margin-top: -22rem;
+                    width: 80%;
+                    margin: -22rem 10% 0 10%;
                 }
                 .process1 {
                     position: relative;
                     opacity: 0;
-                    top: 500px;
+                    top: 450px;
                     p {
-                        padding-top:0;
+                        padding-top: 0;
                     }
                 }
-
                 .process2 {
                     position: relative;
                     opacity: 0;
-                    top: 175px;
-
+                    top: 50px;
                     p {
-                        padding-top: 100px;
+                        padding-top: 0px;
                     }
-                    
                 }
                 .process3 {
                     position: relative;
                     opacity: 0;
-                    top: -25px;
-                    
+                    top: -200px;
                 }
                 .process4 {
                     position: relative;
                     opacity: 0;
-                    top: -250px;
+                    top: -475px;
                     p {
-                        padding-top: 200px;
+                        padding-top: 100px;
                     }
                 }
-               
                 @keyframes processAnimation {
-                        from {
-                            transform: translateY(0px);
-                            opacity: 0;
-                        }
-                        to {
-                            transform: translateY(-450px);
-                            opacity: 1;
-                        }
+                    from {
+                        transform: translateY(0px);
+                        opacity: 0;
                     }
+                    to {
+                        transform: translateY(-450px);
+                        opacity: 1;
+                    }
+                }
                 .processAnimation {
                     animation: processAnimation 1s ease-out;
                     animation-fill-mode: forwards;
                 }
                 @keyframes backgroundAnimation {
-                        from {
-                            opacity: 0;
-                        }
-                        to {
-                            opacity: 1;
-                        }
+                    from {
+                        opacity: 0;
                     }
+                    to {
+                        opacity: 1;
+                    }
+                }
                 .backgroundAnimation {
                     animation: backgroundAnimation 1s ease-in 1s;
                     animation-fill-mode: forwards;
@@ -302,8 +288,7 @@ for the dist build */
                     width: 100%;
                     padding-left: 2.5%;
                     color: $color3;
-                    margin-top: -650px;
-
+                    margin-top: -750px;
                     div {
                         display: inline-block;
                         width: 10%;
@@ -311,15 +296,22 @@ for the dist build */
                         margin: 2.5%;
                         background: $color2;
                         text-align: center;
+                        line-height: 45px;
                         line-height: 10vw;
                         cursor: pointer;
                         tab-index: "0";
-                        transform:  rotate(45deg);
+                        transform: rotate(45deg);
                         div {
                             transform: rotate(315deg);
                         }
                     }
-
+                    a {
+                        color: $color3;
+                        &:after,
+                        &:before {
+                            background: transparent;
+                        }
+                    }
                     @keyframes wiggle {
                         0% {
                             margin: 2.5% 2.5% 2.5% 2.5%;
@@ -337,32 +329,36 @@ for the dist build */
                     .wiggle {
                         animation: wiggle 2s ease-in-out infinite;
                     }
-                    .still {
-
-                    }
+                    .still {}
                     @keyframes controlAnimation {
-                        from {
+                        0% {
                             transform: scale(1) rotate(45deg);
                         }
-                        to {
+                        75% {
+                            transform: scale(2) rotate(315deg);
+                        }
+                        100% {
                             transform: scale(1.5) rotate(405deg);
                         }
                     }
                     .controlAnimation {
-                    animation: controlAnimation 1s ease-in-out;
-                    animation-fill-mode: forwards;
+                        animation: controlAnimation 1s linear;
+                        animation-fill-mode: forwards;
                     }
                 }
-                
             }
             .portfolio {
                 background: $color3;
                 img:nth-of-type(1) {
+                    margin-left: 5%;
                     width: 70%;
+                    max-width: 300px;
                 }
                 img:nth-of-type(2) {
                     float: right;
+                    margin-right: 5%;
                     width: 50%;
+                    max-width: 200px;
                     margin-top: -325px;
                 }
                 h3 {
@@ -376,6 +372,7 @@ for the dist build */
                 .col6:nth-of-type(2) {
                     img {
                         width: 100%;
+                        max-width: 500px;
                     }
                 }
                 a {
@@ -386,7 +383,6 @@ for the dist build */
             }
             #contact {
                 .col6 {
-
                     h3 {
                         @include boxHeader;
                     }
@@ -428,18 +424,108 @@ for the dist build */
             text-align: center;
             @include links;
             a:before {
-                background: $color5;
+                background: transparent;
             }
         }
     }
-    @media only screen and (min-width: 350px) {
-        body main #process #processControl {
-            margin-top: -550px;
+    
+    @media only screen and (min-width: 375px) {
+        body main #process {
+            .process1 {
+                top: 500px;
+            }
+            .process2 {
+                top: 150px;
+            }
+            .process3 {
+                top: -100px;
+            }
+            .process4 {
+                top: -375px;
+            }
+            #processControl {
+                margin-top: -600px;
+            }
         }
     }
+    
+    @media only screen and (min-width: 500px) {
+        body main {
+            #process {
+                #processControl {
+                    margin-top: -500px;
+                    a {
+                        margin-top: -.5rem;
+                        margin-left: -.25rem;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            #portfolio1 {
+                margin-top: -100px;
+            }
+            .portfolio {
+                img:nth-of-type(1) {
+                    margin-left: 10%;
+                }
+                img:nth-of-type(2) {
+                    margin-right: 10%;
+                }
+                h5 {
+                    text-align: center;
+                }
+                ul {
+                    margin-left: 25%;
+                }
+            }            
+        }
+    }
+    
+    @media only screen and (min-width: 600px) {
+        body {
+            header {
+                h1 {
+                    font-size: 9rem;
+                }
+            }
+            main {
+                #process {
+                    p {
+                        width: 75%;
+                        margin-left: 12.5%;
+                        margin-right: 12.5%;
+                    }
+                    #processControl {
+                        width: 80%;
+                        margin-left: 15%;
+                        div {
+                            height: 8vw;
+                        }
+                    }
+                }
+                .portfolio {
+                    img:nth-of-type(1) {
+                        margin-left: 18%;
+                    }
+                    img:nth-of-type(2) {
+                        margin-right: 17%;
+                    }
+                    .col6:nth-of-type(2) img {
+                        margin-left: 10%;
+                    }
+                }
+                #portfolio1 {
+                margin-top: -200px;
+            }
+            }
+        }
+    }
+    
     //tablet styles
     @media only screen and (min-width: 768px) {
-        html {}
+        html {
+            font-size: 24px;
+        }
         body {
             header {
                 nav {
@@ -464,11 +550,13 @@ for the dist build */
                         }
                         ul {
                             display: block;
+                            li {
+                                font-size: 1rem;
+                            }
                         }
                     }
                     div {
                         position: relative;
-                        z-index: 500;
                         height: 75px;
                         background: $color3;
                         .logo {
@@ -479,13 +567,8 @@ for the dist build */
                             }
                         }
                         img {
-                            position: relative;
-                            z-index: 1000;
                             width: 100px;
-                            border-radius: 50%;
-                            box-shadow: 2px 2px 5px $color2;
                         }
-
                         ul {
                             position: fixed;
                             width: 75%;
@@ -499,7 +582,18 @@ for the dist build */
                                 font-size: 1.25rem;
                             }
                         }
-
+                        @keyframes slideDown {
+                            from {
+                                top: -100px;
+                            }
+                            to {
+                                top: -35px;
+                            }
+                        }
+                        .slideDown {
+                            animation: slideDown .5s ease-in-out;
+                            animation-fill-mode: forwards;
+                        }
                     }
                     .slideUp {
                         display: block;
@@ -509,7 +603,7 @@ for the dist build */
                         width: 100%;
                         height: 50px;
                         background: $color1;
-                        top: -84px;
+                        top: -100px;
                         padding-top: 1rem;
                         border-bottom: 1px solid $color3;
                         transition: .3s;
@@ -523,11 +617,9 @@ for the dist build */
                             }
                         }
                     }
-
                 }
-                
                 h1 {
-
+                    margin-top: 0;
                     font-size: 9rem;
                 }
                 .col12 button {
@@ -535,7 +627,103 @@ for the dist build */
                     margin-left: 35%;
                 }
             }
-            main {}
+            main {
+                #intro {
+                    h3 {
+                        width: 80%;
+                    }
+                    div {
+                        .col6:nth-of-type(1) {
+                            min-height: 400px;
+                            p {
+                                width: 60vw;
+                            }
+                            p:nth-of-type(4) {
+                                width: 100%;
+                            }
+                            img {
+                                display: none;
+                            }
+                        }
+                        .col6:nth-of-type(2) {
+                            display: block;
+                            max-height: 50vw;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                #process {
+                    @keyframes processAnimation {
+                        from {
+                            transform: translateY(0px);
+                            opacity: 0;
+                        }
+                        to {
+                            transform: translateY(-100px);
+                            opacity: 1;
+                        }
+                    }
+                    .process1 {
+                        top: 150px;
+                    }
+                    .process2 {
+                        top: -225px;
+                    }
+                    .process3 {
+                        top: -500px;
+                    }
+                    .process4 {
+                        top: -775px;
+                    }
+                    #processControl {
+                        margin-top: -600px;
+                        div {
+                            height: 6vw;
+                            width: 7.5%;
+                            line-height: 45px;
+                        }
+                        a {
+                            margin-top: 0;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+                .portfolio {
+                    img:nth-of-type(1) {
+                        margin-left: 5%;
+                    }
+                    img:nth-of-type(2) {
+                        margin-right: 5%;
+                    }
+                    h5 {
+                        text-align: left;
+                        margin-left: 10%;
+                    }
+                    ul {
+                        margin-left: 5%;
+                    }
+                    .col6:nth-of-type(2) {
+                        img {
+                            margin-top: 5rem;
+                        }
+                    }
+                }
+                #portfolio1 {
+                margin-top: -50px;
+            }
+                #contact {
+                    .col6 {
+                        &:first-of-type {
+                            padding-top: 40px;
+                        }
+                        h3 {
+                            width: 80%;
+                        }
+                    }
+                }
+            }
             footer {}
         }
     }
@@ -544,25 +732,67 @@ for the dist build */
     @media only screen and (min-width: 960px) {
         html {}
         body {
-            header {
-                h1 {
-                    font-size: 10rem;
+            nav {}
+            main {
+                #intro {
+                    div {
+                        .col6:first-of-type {
+                            p {
+                                width: 50vw;
+                            }
+                        }
+                    }
                 }
-                nav {}
+                #process {
+                    #processControl {
+                        margin-top: -500px;
+                        a {
+                            font-size: 2rem;
+                        }
+                    }
+                }
             }
-            main {}
             footer {}
         }
     }
     
     //large screen styles
-    @media only screen and (min-width: 1140px) {
+    @media only screen and (min-width: 1188px) {
         html {}
         body {
             header {
-                nav {}
+                nav {
+                    div {
+                        ul {
+                            padding-left: 30%;
+                        }
+                    }
+                }
             }
-            main {}
+            main {
+                #process {
+                    .process2 {
+                        top: -150px;
+                    }
+                    .process3 {
+                        top: -375px;
+                    }
+                    .process4 {
+                        top: -600px;
+                    }
+                    #processControl {
+                        margin-top: -400px;
+                        div {
+                            height: 70px;
+                        }
+                    }
+                }
+                .portfolio {
+                    img:nth-of-type(2) {
+                        margin-top: 25px;
+                    }
+                }
+            }
             footer {}
         }
     }
