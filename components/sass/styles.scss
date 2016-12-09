@@ -19,7 +19,7 @@ for the dist build */
             margin: -1px;
             overflow: hidden;
             clip: rect(0, 0, 0, 0);
-            border: 0
+            border: 0;
         }
         .sr-only-focusable:active,
         .sr-only-focusable:focus {
@@ -28,7 +28,7 @@ for the dist build */
             height: auto;
             margin: 0;
             overflow: visible;
-            clip: auto
+            clip: auto;
         }
     }
     
@@ -203,7 +203,7 @@ for the dist build */
                         p:nth-of-type(4) {
                             position: relative;
                             z-index: 100;
-                            width: 70%;
+                            width: 60%;
                             ul {
                                 background: $color1;
                             }
@@ -240,7 +240,7 @@ for the dist build */
                 .process2 {
                     position: relative;
                     opacity: 0;
-                    top: 50px;
+                    top: 100px;
                     p {
                         padding-top: 0px;
                     }
@@ -248,12 +248,12 @@ for the dist build */
                 .process3 {
                     position: relative;
                     opacity: 0;
-                    top: -200px;
+                    top: -275px;
                 }
                 .process4 {
                     position: relative;
                     opacity: 0;
-                    top: -475px;
+                    top: -625px;
                     p {
                         padding-top: 100px;
                     }
@@ -285,10 +285,10 @@ for the dist build */
                     animation-fill-mode: forwards;
                 }
                 #processControl {
-                    width: 100%;
+                    width: 97.5%;
                     padding-left: 2.5%;
                     color: $color3;
-                    margin-top: -750px;
+                    margin-top: -1050px;
                     div {
                         display: inline-block;
                         width: 10%;
@@ -349,6 +349,7 @@ for the dist build */
             }
             .portfolio {
                 background: $color3;
+                margin-bottom: 3.375rem;
                 img:nth-of-type(1) {
                     margin-left: 5%;
                     width: 70%;
@@ -371,7 +372,7 @@ for the dist build */
                 }
                 .col6:nth-of-type(2) {
                     img {
-                        width: 100%;
+                        width: 90%;
                         max-width: 500px;
                     }
                 }
@@ -407,13 +408,16 @@ for the dist build */
                         @include formStyling;
                     }
                     button {
+                        width: 80%;
+                        margin: 1rem 10%;
                         border-color: $color4;
                         color: $color4;
                         &:hover {
-                            color: $color3;
+                            color: $color2;
+                            border-color: $color3;
                         }
                         &:before {
-                            background: $color4;
+                            background: $color3;
                         }
                     }
                 }
@@ -421,6 +425,7 @@ for the dist build */
         }
         footer {
             background: $color5;
+            border-top: 12px solid $color4;
             text-align: center;
             @include links;
             .fa {
@@ -429,7 +434,19 @@ for the dist build */
             a:before {
                 background: transparent;
             }
-        }
+            
+            .col12 { 
+                span {
+                color: $color4;
+                }
+                a {
+                    margin-left: 20%;
+                }
+                i {
+                    color: $color2;
+                }
+            }
+        }       
     }
     
     @media only screen and (min-width: 375px) {
@@ -441,13 +458,13 @@ for the dist build */
                 top: 150px;
             }
             .process3 {
-                top: -100px;
+                top: -150px;
             }
             .process4 {
-                top: -375px;
+                top: -475px;
             }
             #processControl {
-                margin-top: -600px;
+                margin-top: -800px;
             }
         }
     }
@@ -735,17 +752,16 @@ for the dist build */
     @media only screen and (min-width: 960px) {
         html {}
         body {
-            nav {}
-            main {
-                #intro {
-                    div {
-                        .col6:first-of-type {
-                            p {
-                                width: 50vw;
-                            }
+            header {
+                nav {
+                    .navbar {
+                        li {
+                            font-size: 1.25rem;
                         }
                     }
                 }
+            }
+            main {
                 #process {
                     #processControl {
                         margin-top: -700px;
@@ -774,6 +790,15 @@ for the dist build */
                 }
             }
             main {
+                #intro {
+                    div {
+                        .col6:first-of-type {
+                            p {
+                                width: 55vw;
+                            }
+                        }
+                    }
+                }
                 #process {
                     .process2 {
                         top: -150px;
@@ -799,4 +824,20 @@ for the dist build */
             }
             footer {}
         }
+    }
+    @media only screen and (min-width: 1350px) {
+        body {
+            main {
+                #intro {
+                    div {
+                        .col6:first-of-type {
+                            p {
+                                width: 45vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
     }
