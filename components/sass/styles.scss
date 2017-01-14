@@ -1,6 +1,6 @@
     /* All other Sass style sheets are imported here. You can add as many
 as makes sense for your project as long as you follow the 
-naming convention "_filename.scss". They will be concantenated, compiled 
+naming convention "_filename.scss". They will be concatenated, compiled
 to CSS3 and linted for the dev build and minified with comments removed 
 for the dist build */
     
@@ -43,8 +43,12 @@ for the dist build */
         h4 {
             text-align: center;
         }
+        h2 {
+            font-size: 2.25rem;
+        }
         p {
             margin-left: 5%;
+            line-height: 1.35;
         }
         button {
             position: relative;
@@ -96,7 +100,6 @@ for the dist build */
                 font-size: 7rem;
                 margin-bottom: 8rem;
                 color: $color3;
-                text-shadow: 5px 5px $color6;
             }
             nav {
                 top: 0;
@@ -217,6 +220,12 @@ for the dist build */
             #process {
                 height: 600px;
                 height: 100vh;
+                h2 {
+                    margin-top: 3.375rem;
+                }
+                h3 {
+                    margin: 1rem 0 -2.25rem 0;
+                }
                 h4 {
                     opacity: 0;
                     color: $color5;
@@ -240,7 +249,7 @@ for the dist build */
                 .process2 {
                     position: relative;
                     opacity: 0;
-                    top: 100px;
+                    top: 50px;
                     p {
                         padding-top: 0px;
                     }
@@ -248,12 +257,12 @@ for the dist build */
                 .process3 {
                     position: relative;
                     opacity: 0;
-                    top: -275px;
+                    top: -350px;
                 }
                 .process4 {
                     position: relative;
                     opacity: 0;
-                    top: -625px;
+                    top: -750px;
                     p {
                         padding-top: 100px;
                     }
@@ -288,7 +297,7 @@ for the dist build */
                     width: 97.5%;
                     padding-left: 2.5%;
                     color: $color3;
-                    margin-top: -1050px;
+                    margin-top: -1175px;
                     div {
                         display: inline-block;
                         width: 10%;
@@ -362,13 +371,21 @@ for the dist build */
                     max-width: 200px;
                     margin-top: -325px;
                 }
+                h2 {
+                    padding-top: 50px;
+                }
                 h3 {
                     font-size: 1.5rem;
                 }
                 h5 {
                     font-size: 1.25rem;
                     line-height: .5;
-                    margin-left: 8%;
+                    margin-left: 5%;
+                }
+                h6 {
+                    font-size: 1.25rem;
+                    line-height: .5;
+                    margin-left: 10%;
                 }
                 .col6:nth-of-type(2) {
                     img {
@@ -376,8 +393,10 @@ for the dist build */
                         max-width: 500px;
                     }
                 }
+
                 a {
-                    margin-left: 40%;
+                    left: 50%;
+                    transform: translateX(-50%);
                     text-align: center;
                     color: $color2;
                 }
@@ -426,8 +445,11 @@ for the dist build */
         footer {
             background: $color5;
             border-top: 12px solid $color4;
-            text-align: center;
             @include links;
+            ul {
+               padding-left: 40%;
+
+            }
             .fa {
                 font-size: 2rem;
             }
@@ -448,23 +470,34 @@ for the dist build */
             }
         }       
     }
-    
+    @media only screen and (min-width: 359px) {
+        body main {
+            .portfolio h2 {
+                padding-top: 0;
+            }
+            #process {
+                .process1 {
+                    top: 450px;
+                }
+                .process2 {
+                    top: 100px;
+                }
+                .process3 {
+                    top: -250px;
+                }
+                .process4 {
+                    top: -600px;
+                }
+                #processControl {
+                    margin-top: -1000px;
+                }
+            }
+        }
+    }
     @media only screen and (min-width: 375px) {
         body main #process {
-            .process1 {
-                top: 500px;
-            }
-            .process2 {
-                top: 150px;
-            }
-            .process3 {
-                top: -150px;
-            }
-            .process4 {
-                top: -475px;
-            }
             #processControl {
-                margin-top: -800px;
+                margin-top: -950px;
             }
         }
     }
@@ -692,13 +725,13 @@ for the dist build */
                         top: -225px;
                     }
                     .process3 {
-                        top: -500px;
+                        top: -600px;
                     }
                     .process4 {
-                        top: -775px;
+                        top: -950px;
                     }
                     #processControl {
-                        margin-top: -700px;
+                        margin-top: -900px;
                         div {
                             height: 6vw;
                             width: 7.5%;
@@ -711,6 +744,9 @@ for the dist build */
                     }
                 }
                 .portfolio {
+                    h2 {
+                        margin-top: -5.063rem;
+                    }
                     img:nth-of-type(1) {
                         margin-left: 5%;
                     }
@@ -719,10 +755,13 @@ for the dist build */
                     }
                     h5 {
                         text-align: left;
-                        margin-left: 10%;
+                        margin-left: 5%;
+                    }
+                    h6 {
+                        margin-left: 12.5%;
                     }
                     ul {
-                        margin-left: 5%;
+                        margin-left: 2.5%;
                     }
                     .col6:nth-of-type(2) {
                         img {
@@ -732,7 +771,10 @@ for the dist build */
                 }
                 #portfolio1 {
                 margin-top: -50px;
-            }
+                }
+                #portfolio2 a {
+                    left: 0;
+                }
                 #contact {
                     .col6 {
                         &:first-of-type {
@@ -770,6 +812,14 @@ for the dist build */
                         }
                     }
                 }
+                .portfolio {
+                    h6 {
+                        margin-left: 10%;
+                    }
+                }
+                #portfolio2 a {
+                    left: 50%;
+                }
             }
             footer {}
         }
@@ -804,10 +854,10 @@ for the dist build */
                         top: -150px;
                     }
                     .process3 {
-                        top: -375px;
+                        top: -425px;
                     }
                     .process4 {
-                        top: -600px;
+                        top: -700px;
                     }
                     #processControl {
                         margin-top: -600px;
